@@ -67,3 +67,18 @@ class Cleaner():
 			print(key, table[key])
 
 		return self.data
+
+def mean(data):
+	return sum(data)/len(data)
+
+def median(data):
+	size = len(data)
+	midpoint = int(size / 2)
+
+	# Check if element count is odd
+	if size % 2 != 0:
+		median = (data[midpoint] + data[midpoint - 1]) / 2
+	else:
+		median = data[midpoint]
+
+	return median
