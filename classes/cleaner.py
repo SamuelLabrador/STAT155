@@ -119,3 +119,8 @@ def trimmed_mean(data, percent):
 def std_deviation(data):
 	var = variance(data)
 	return sqrt(var)
+	
+def stat_range(data):
+	size = len(data)
+	
+	return (data[size - 1] - data[0])

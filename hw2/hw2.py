@@ -90,3 +90,41 @@ print('Variance of transformed data (value - 100): ', variance(data))
 
 
 # PROBLEM 6
+p6 = """
+33.1 	 47.1 	 30.6 	 29.7 	 29.0 	 28.9 	 29.8 	 28.0 	 23.1 	 27.9
+"""
+
+data = cleaner.clean(p6)
+
+print('\nRange: ', stat_range(data))
+print('Variance: ', variance(data))
+print('Std Deviation: ', std_deviation(data))
+
+p7 = """
+242	191	157	188	178	174	180
+203	212	183	206	175	191	204
+"""
+
+data = cleaner.clean(p7)
+print('\nAverage: ', mean(data))
+print('Median: ', median(data))
+
+i = data.index(242)
+data[i] = 256
+data.sort()
+
+print('242 --> 256 Average: ', mean(data))
+print('242 --> 256 Median: ', median(data))
+print('Trimmed mean: ', mean(data[1:-1]))
+print('Trim percentage: ', (len(data) - 2) / len(data))
+
+print('Data set size: ', len(data))
+
+average = 119.7692
+outlier = 165
+size = 14
+average = average + (outlier - average) / size
+
+print('Entire sample average: ', average)
+
+# PROBLEM 8
