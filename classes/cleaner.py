@@ -1,3 +1,6 @@
+from math import sqrt
+
+# Class to properly format and clean data.
 class Cleaner():
 
 	# Formats data to space sparated values
@@ -68,9 +71,12 @@ class Cleaner():
 
 		return self.data
 
+# Sum the all the values of the data and divide by the
+# size of the data set sum(data)/len(data)
 def mean(data):
 	return sum(data)/len(data)
 
+# Middle value of data set data_set[size/2]
 def median(data):
 	size = len(data)
 	midpoint = int(size / 2)
@@ -92,3 +98,24 @@ def variance(data):
 	summation = sum([(value - mew)**2 for value in data])
 	
 	return summation / size
+	
+# Take percentage of size. The value is used to
+# dictate how many elements are trimmed off the 
+# front and back of the sorted data set. 
+# Retrun the average of the trimmed data set
+def trimmed_mean(data, percent):
+	
+	size = len(data)
+	
+	
+	if size % percent == 0:
+		cutoff = int(size * percent)
+	else:
+		print("BE CAREFULL. DATA LENGTH * PERCENTAGE HAS A REMAINDER")
+		cutoff = int(size * percent)
+		
+	return mean(data[cutoff: cutoff * -1])
+
+def std_deviation(data):
+	var = variance(data)
+	return sqrt(var)
