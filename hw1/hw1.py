@@ -1,6 +1,38 @@
 from cleaner import *
 
 cleaner = Cleaner()
+displayer = Displayer()
+
+# PROBLEM 1
+
+p1 = """
+5.9	7.2	7.3	6.3	8.1	6.8	7.0	7.6	6.8	6.5	7.0	6.3	7.9	 9.0
+8.2	8.7	7.8	9.7	7.4	7.7	9.7	7.8	7.7	11.6	11.3	11.8	10.7
+"""
+
+data = cleaner.clean(p1)
+print(data)
+
+p4 = """
+0	19.3	37.8	62.8	77.7	87.6	94.6	96.1	98.7	99.0	99.5	99.6	99.8	100.0
+"""
+
+data = cleaner.clean(p4)
+for value in range(1, len(data)):
+    print('{}: {}%'.format(data[value], data[value] - data[value - 1]))
+
+p5 = """
+1280	5320	4390	2100	1240	3060	4770
+1050	360	3330	3380	340	1000	960
+1320	530	3350	540	3870	1250	2400
+960	1120	2120	450	2250	2320	2400
+3150	5700	5220	500	1850	2460	5850
+2700	2730	1670	100	5770	3150	1890
+510	240	396	1419	2109
+"""
+
+data = cleaner.clean(p5)
+
 
 p7 = """
 4   1   2   4   0   1   3   2   0   5   3   3   1   3   2   4   7   0   2   3
@@ -54,7 +86,8 @@ p9 = """
 """
 
 print('\n\n')
-data = cleaner.stemLeaf(10, p9)
+data = cleaner.clean(p9)
+displayer.stemLeaf(data, 10)
 
 p10 = """772	  204	  127	    50	    33	    28	    19	    19	      6	      7	      6	      7	      4	      4	      5	     3	  3"""
 data = cleaner.clean(p10)

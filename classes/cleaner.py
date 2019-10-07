@@ -53,14 +53,15 @@ class Cleaner():
 			rf = frequency / len(self.data)
 			print('{}:\t\t{}\t\t{}'.format(i, frequency, rf))
 
-	def stemLeaf(self, stemFactor, data=None):
-		if data is not None:
-			self.data = self.clean(data)
-
+		
+class Displayer():
+	def __init__(self):
+		self.data = None
+		
+	def stemLeaf(self, data, stemFactor):
 		table = dict()
 
-
-		for value in self.data:
+		for value in data:
 			key = int(value / stemFactor)
 			if key not in table:
 				table[key] = list()
@@ -69,7 +70,9 @@ class Cleaner():
 		for key in table:
 			print(key, table[key])
 
-		return self.data
+		return data
+	
+
 
 # Sum the all the values of the data and divide by the
 # size of the data set sum(data)/len(data)
