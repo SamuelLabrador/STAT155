@@ -19,9 +19,9 @@ x_i2 = sum([i ** 2 for i in data])/size
 print(x_i)
 print(x_i2)
 
-variance = (x_i2 - (x_i**2)/size)/(size - 1)
-print(variance)		# Variance  
-print(sqrt(variance)) # Std dev
+var = (x_i2 - (x_i**2)/size)/(size - 1)
+print(var)		# Variance  
+print(sqrt(var)) # Std dev
 
 # PROBLEM 2
 urban = """7.0	  6.0	  10.0	  33.0	  1.0	  4.0	  81.0	  19.0	  37.0	  16.0	  23.0"""
@@ -40,3 +40,16 @@ print("\nFarm average: {}".format(xbar))
 print("Farm median: {}".format(median(data)))
 print("Farm trimmed average: {}".format(mean(data[1:-1])))
 print("Farm samples: {}".format(len(data)))
+
+
+# PROBLEM 3
+p3 = """
+2776  	  2903  	  3000  	  2826  	  2879
+"""
+
+data = cleaner.clean(p3)
+
+var = variance(data)
+print("\nSpecimens mean: ", mean(data))
+print("Specimens median: ", median(data))
+print("Specimens sample variance: {}".format(var))

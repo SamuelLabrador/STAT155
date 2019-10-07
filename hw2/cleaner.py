@@ -82,3 +82,13 @@ def median(data):
 		median = data[midpoint]
 
 	return median
+
+# sigma^2 = summation[(value - x_bar)**2]/len(data)
+def variance(data):
+	
+	size = len(data)
+	mew = mean(data)
+	
+	summation = sum([(value - mew)**2 for value in data])
+	
+	return summation / size
