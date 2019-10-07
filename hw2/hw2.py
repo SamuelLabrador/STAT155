@@ -151,10 +151,34 @@ p9 = """
 
 data = cleaner.clean(p9)
 average = mean(data)
-median = median(data)
+med = median(data)
 size = len(data)
 
 print('\nAverage: ', average)
-print('Median: ', median)
+print('Median: ', med)
 print(data)
 print('Maximum change: ', data[-1] - data[8])
+
+
+p10 = """
+385	351	354	360	378	424	321	397	404
+374	376	371	364	367	364	328	337	395
+391	368	377	356	352	408	331	397
+"""
+
+data = cleaner.stemLeaf(10, p10)
+average = mean(data)
+med = median(data)
+
+print('\n', data)
+print('Average: ', average)
+print('Median: ', med)
+print('Data set size: ', len(data))
+print('Smallest Change: ', data[-1] - data[13])
+
+data = [ value / 60 for value in data]
+
+average = mean(data)
+med = median(data)
+print('Average: ', average)
+print('Median: ', med)
