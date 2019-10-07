@@ -82,7 +82,7 @@ def median(data):
 	midpoint = int(size / 2)
 
 	# Check if element count is odd
-	if size % 2 != 0:
+	if size % 2 == 0:
 		median = (data[midpoint] + data[midpoint - 1]) / 2
 	else:
 		median = data[midpoint]

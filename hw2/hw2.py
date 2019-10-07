@@ -128,3 +128,33 @@ average = average + (outlier - average) / size
 print('Entire sample average: ', average)
 
 # PROBLEM 8
+p8 = """
+F   F   S   S   S   F   F   S   S   F
+"""
+
+fail = p8.count("F")
+succ = p8.count("S")
+size = fail + succ
+
+average = succ / size
+
+print('\nFails: ', fail)
+print('Passes: ', succ)
+print('Average: ', average)
+print('Required S\'s: ', int(25 * 0.8))
+
+# PROBLEM 9
+p9 = """
+0.737	0.843	0.878	0.904	0.925	0.937	0.988	0.993
+1.030	1.050	1.082	1.120	1.146	1.174	1.236	1.396
+"""
+
+data = cleaner.clean(p9)
+average = mean(data)
+median = median(data)
+size = len(data)
+
+print('\nAverage: ', average)
+print('Median: ', median)
+print(data)
+print('Maximum change: ', data[-1] - data[8])
